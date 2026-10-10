@@ -126,3 +126,41 @@ Packaging facts the code relies on:
 - Keep every `Cargo.toml` valid at all times: the `crates/*` and `apps/*` globs mean one broken
   manifest breaks everyone's build. Write manifests to a temp file and `mv` them into place.
 - If someone else's in-progress edit breaks the build, wait and retry; don't fix their files.
+
+<!-- kovaforge-fork-context -->
+## KovaForge fork context
+
+Forked from: `storytold/craft-launcher`
+Fork date: 2026-10-10
+Forked by: Vladislava Kova
+
+### Git identity
+
+Before any commit in this repo, use the per-person wrapper (`git-vladislava`, `git-mikhail`, `git-declan`, …). Do not bare `git push`.
+
+### Commit alias
+
+Use `git commit-kf "message"` instead of plain `git commit`. The alias enforces identity validation, a staged-file secret scan, and Co-authored-by trailers.
+
+See: `vault/protocols/KVF-DEV-POL-001_Git_Policy.md`
+
+### Co-authors (permanent)
+
+Every commit must include:
+
+```
+Co-authored-by: Michael D <McoreD@users.noreply.github.com>
+Co-authored-by: vladislava-kova-kf <vladislava-kova-kf@users.noreply.github.com>
+```
+
+### Clone paths (this host)
+
+Linux canonical root is `/home/mike/Work` (relocated from `/Users/mike/Projects`).
+
+- Upstream: `/home/mike/Work/storytold/craft-launcher`
+- KovaForge fork: `/home/mike/Work/KovaForge/craft-launcher`
+- Remotes on the fork: `origin` = `https://github.com/KovaForge/craft-launcher.git`, `upstream` = `https://github.com/storytold/craft-launcher.git`
+
+### Secrets
+
+Never commit `.env`, `*.env`, `secrets.json`, or `credentials.*`.
